@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'covid',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -73,10 +75,23 @@ WSGI_APPLICATION = 'covidmx.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'covidmx',
+        'USER': 'root',
+        'PASSWORD': 'adminsql.server',
+        'HOST': '3.129.172.84',
+        'PORT': '3320',
     }
 }
 
@@ -103,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -112,6 +127,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+USE_PURE = True
 
 
 # Static files (CSS, JavaScript, Images)

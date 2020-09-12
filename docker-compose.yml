@@ -27,8 +27,8 @@ services:
     environment:
       HOST: db
       PORT: 3306
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     networks:
       - covidmx
     

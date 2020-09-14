@@ -31,6 +31,21 @@ services:
       - db
     networks:
       - covidmx
+
+  web:
+    image: nginx
+    container_name: web
+    restart: always
+    volumes:
+      - ./../www:/usr/share/nginx/html:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on: 
+      - db
+      - api
+    networks: 
+      - covidmx
     
 
 networks:

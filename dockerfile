@@ -13,5 +13,6 @@ RUN pip install djangorestframework==3.11.1
 RUN pip install pytz==2020.1
 RUN pip install sqlparse==0.3.1
 RUN pip install mysqlclient
+RUN pip install django-cors-headers
 
 COPY . /code/
